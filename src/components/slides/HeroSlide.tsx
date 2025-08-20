@@ -1,23 +1,23 @@
 export function HeroSlide() {
   return (
-    <div className="h-screen flex items-center justify-center p-6">
+    <div className="min-h-screen flex items-center justify-center p-6 py-12">
       <div className="text-center max-w-4xl mx-auto space-y-8">
         {/* Main Title */}
         <div className="space-y-4">
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 animate-fade-in-up">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4 animate-fade-in-up">
             Hello, I'm{' '}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span >
               Rakha!
             </span>
           </h1>
           
           <div className="space-y-2 animate-fade-in-up [animation-delay:0.2s]">
-            <p className="text-xl md:text-2xl text-white/90 font-medium">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/95 font-medium px-4">
               Fullstack Web & AI Developer | Digital Nomad | Tech Instructor
             </p>
             
             {/* Javanese Script */}
-            <p className="text-lg text-primary-start font-medium italic">
+            <p className="text-base md:text-lg text-primary-start font-medium italic">
               ꦫꦏ ꦧꦒꦸꦱ꧀ ꦱꦏ꧀ꦠꦶꦮꦤ꧀
             </p>
           </div>

@@ -112,11 +112,11 @@ export function Presentation() {
       {/* Main Slide Container */}
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Slide Content */}
-        <div className="flex-1 relative">
+        <div className="flex-1 relative overflow-y-auto">
           <div
             key={currentSlide}
             className={cn(
-              "absolute inset-0 transition-all duration-700 ease-out",
+              "relative transition-all duration-700 ease-out",
               direction === 'next' ? "animate-fade-in-up" : "animate-scale-in"
             )}
           >
@@ -125,19 +125,19 @@ export function Presentation() {
         </div>
 
         {/* Navigation Controls */}
-        <div className="relative z-20 p-6">
+        <div className="relative z-20 p-4 md:p-6">
           {/* Slide Indicators */}
-          <div className="flex justify-center mb-6">
-            <div className="glass rounded-full px-6 py-3 flex items-center gap-2">
+          <div className="flex justify-center mb-4 md:mb-6">
+            <div className="glass rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2">
               {SLIDES.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={cn(
-                    "w-2 h-2 rounded-full transition-all duration-300",
+                    "w-2 h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-start",
                     index === currentSlide 
-                      ? "bg-primary-start w-8" 
-                      : "bg-white/30 hover:bg-white/50"
+                      ? "bg-primary-start w-6 md:w-8" 
+                      : "bg-white/40 hover:bg-white/60"
                   )}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -146,20 +146,20 @@ export function Presentation() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between items-center max-w-6xl mx-auto">
+          <div className="flex justify-between items-center max-w-6xl mx-auto gap-4">
             <Button
               variant="ghost"
               size="lg"
               onClick={prevSlide}
               disabled={currentSlide === 0}
-              className="glass text-white hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-smooth"
+              className="glass text-white hover:bg-white/25 disabled:opacity-20 disabled:cursor-not-allowed transition-smooth px-3 md:px-6"
             >
-              <ChevronLeft className="w-6 h-6 mr-2" />
-              Previous
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 md:mr-2" />
+              <span className="hidden md:inline">Previous</span>
             </Button>
 
-            <div className="glass rounded-full px-6 py-2">
-              <span className="text-white/80 text-sm font-medium">
+            <div className="glass rounded-full px-3 md:px-6 py-1 md:py-2">
+              <span className="text-white/90 text-xs md:text-sm font-medium">
                 {currentSlide + 1} / {SLIDES.length}
               </span>
             </div>
@@ -169,17 +169,20 @@ export function Presentation() {
               size="lg"
               onClick={nextSlide}
               disabled={currentSlide === SLIDES.length - 1}
-              className="glass text-white hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-smooth"
+              className="glass text-white hover:bg-white/25 disabled:opacity-20 disabled:cursor-not-allowed transition-smooth px-3 md:px-6"
             >
-              Next
-              <ChevronRight className="w-6 h-6 ml-2" />
+              <span className="hidden md:inline">Next</span>
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6 md:ml-2" />
             </Button>
           </div>
 
           {/* Keyboard Shortcuts Hint */}
-          <div className="text-center mt-4">
-            <p className="text-white/60 text-xs">
+          <div className="text-center mt-3 md:mt-4">
+            <p className="text-white/60 text-xs hidden md:block">
               Use arrow keys, spacebar, or numbers 1-8 to navigate
+            </p>
+            <p className="text-white/60 text-xs md:hidden">
+              Swipe or tap buttons to navigate
             </p>
           </div>
         </div>

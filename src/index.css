@@ -26,7 +26,7 @@ All colors MUST be HSL. Gradients and animations defined here.
 
     /* Glass Cards */
     --glass: 0 0% 100%;
-    --glass-foreground: 0 0% 5%;
+    --glass-foreground: 0 0% 98%;
     --glass-border: 0 0% 100%;
 
     /* Background Elements */
@@ -53,9 +53,9 @@ All colors MUST be HSL. Gradients and animations defined here.
     --radius: 1rem;
 
     /* Custom Glassmorphism Variables */
-    --glass-backdrop: rgba(255, 255, 255, 0.1);
-    --glass-backdrop-strong: rgba(255, 255, 255, 0.15);
-    --glass-border-color: rgba(255, 255, 255, 0.2);
+    --glass-backdrop: rgba(255, 255, 255, 0.08);
+    --glass-backdrop-strong: rgba(255, 255, 255, 0.12);
+    --glass-border-color: rgba(255, 255, 255, 0.18);
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary-start)), hsl(var(--primary-end)));
@@ -133,6 +133,11 @@ All colors MUST be HSL. Gradients and animations defined here.
   
   .slide-in-left {
     animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Fix for fade-in-up animation */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
   }
 
   /* Hover Effects */

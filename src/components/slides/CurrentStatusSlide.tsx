@@ -2,47 +2,47 @@ export function CurrentStatusSlide() {
   const techStack = ['Python', 'JavaScript', 'React', 'Node.js', 'AI/ML', 'Teaching'];
 
   return (
-    <div className="h-screen flex items-center justify-center p-6">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <div className="min-h-screen flex items-start justify-center p-6 py-12 overflow-y-auto">
+      <div className="max-w-6xl mx-auto space-y-8 md:space-y-12 w-full">
         {/* Title */}
         <div className="text-center animate-fade-in-up">
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
             Where I Am{' '}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span >
               Now
             </span>
           </h2>
         </div>
 
         {/* Status Cards */}
-        <div className="grid md:grid-cols-3 gap-8 animate-fade-in-up [animation-delay:0.2s]">
-          <div className="glass-strong rounded-2xl p-8 hover-lift">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 animate-fade-in-up [animation-delay:0.2s]">
+          <div className="glass-strong rounded-2xl p-6 md:p-8 hover-lift">
             <div className="text-4xl mb-4">🎓</div>
             <h3 className="text-xl font-bold text-white mb-3">Education</h3>
             <p className="text-primary-start font-semibold mb-2">EEPIS Surabaya</p>
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-white/90 text-sm leading-relaxed">
               Informatics Engineering
               <br />
-              <span className="text-white/60">(while working full-time)</span>
+              <span className="text-white/70">(while working full-time)</span>
             </p>
           </div>
 
-          <div className="glass-strong rounded-2xl p-8 hover-lift">
+          <div className="glass-strong rounded-2xl p-6 md:p-8 hover-lift">
             <div className="text-4xl mb-4">💼</div>
             <h3 className="text-xl font-bold text-white mb-3">Professional Role</h3>
             <p className="text-primary-start font-semibold mb-2">Fullstack Developer</p>
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-white/90 text-sm leading-relaxed">
               Web Development & AI Solutions
               <br />
               Technical Instructor
             </p>
           </div>
 
-          <div className="glass-strong rounded-2xl p-8 hover-lift">
+          <div className="glass-strong rounded-2xl p-6 md:p-8 hover-lift">
             <div className="text-4xl mb-4">📍</div>
             <h3 className="text-xl font-bold text-white mb-3">Current Location</h3>
             <p className="text-primary-start font-semibold mb-2">Thailand</p>
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-white/90 text-sm leading-relaxed">
               Until September 20, 2025
               <br />
               <span className="text-secondary-start">Language Camp Experience</span>
