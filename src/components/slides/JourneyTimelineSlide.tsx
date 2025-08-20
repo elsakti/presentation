@@ -1,0 +1,128 @@
+export function JourneyTimelineSlide() {
+  const journeySteps = [
+    {
+      title: "COVID Era",
+      subtitle: "Year 1 SMK",
+      description: "Everything went online",
+      side: "left"
+    },
+    {
+      title: "First Professional Experience",
+      subtitle: "Internship",
+      description: "Mojokerto Communication Office + Broadcasting",
+      side: "right"
+    },
+    {
+      title: "Golden Ticket Metaverse",
+      subtitle: "Scholarship Program",
+      description: "Bandung (4 months)",
+      side: "left"
+    },
+    {
+      title: "Kalimantan Project",
+      subtitle: "Rural & Urban Metaverse",
+      description: "North Kalimantan (4 months)",
+      side: "right"
+    },
+    {
+      title: "Became an Instructor",
+      subtitle: "Teaching IT Teachers",
+      description: "BBPPMPV BOE Malang - before even graduating!",
+      side: "left"
+    },
+    {
+      title: "International Teaching",
+      subtitle: "Nakhon Phanom",
+      description: "Technical College, Thailand (20 days)",
+      side: "right"
+    },
+    {
+      title: "HRIS Project",
+      subtitle: "Surabaya → Bandung",
+      description: "Development work and back to Bandung",
+      side: "left"
+    },
+    {
+      title: "Current Adventure",
+      subtitle: "International Language Camp",
+      description: "TSN Thailand!",
+      side: "right"
+    }
+  ];
+
+  return (
+    <div className="h-screen flex items-center justify-center p-6 overflow-y-auto">
+      <div className="max-w-6xl mx-auto space-y-12">
+        {/* Title */}
+        <div className="text-center animate-fade-in-up">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            My{' '}
+            <span className="bg-gradient-secondary bg-clip-text text-transparent">
+              Nomadic Journey
+            </span>
+          </h2>
+          <p className="text-xl text-white/80 italic">
+            The boy who rarely goes home and keeps moving
+          </p>
+        </div>
+
+        {/* Timeline */}
+        <div className="relative">
+          {/* Center Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-primary rounded-full"></div>
+
+          {/* Timeline Items */}
+          <div className="space-y-12">
+            {journeySteps.map((step, index) => (
+              <div
+                key={index}
+                className={`flex items-center animate-fade-in-up`}
+                style={{ animationDelay: `${0.1 * index}s` }}
+              >
+                {step.side === 'left' ? (
+                  <>
+                    {/* Left Content */}
+                    <div className="w-5/12 text-right pr-8">
+                      <div className="glass-strong rounded-2xl p-6 hover-lift">
+                        <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                        <p className="text-primary-start font-semibold mb-2">{step.subtitle}</p>
+                        <p className="text-white/80 text-sm">{step.description}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Center Circle */}
+                    <div className="w-2/12 flex justify-center">
+                      <div className="w-4 h-4 bg-secondary-start rounded-full border-4 border-background z-10"></div>
+                    </div>
+                    
+                    {/* Right Spacer */}
+                    <div className="w-5/12"></div>
+                  </>
+                ) : (
+                  <>
+                    {/* Left Spacer */}
+                    <div className="w-5/12"></div>
+                    
+                    {/* Center Circle */}
+                    <div className="w-2/12 flex justify-center">
+                      <div className="w-4 h-4 bg-secondary-start rounded-full border-4 border-background z-10"></div>
+                    </div>
+                    
+                    {/* Right Content */}
+                    <div className="w-5/12 pl-8">
+                      <div className="glass-strong rounded-2xl p-6 hover-lift">
+                        <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                        <p className="text-primary-start font-semibold mb-2">{step.subtitle}</p>
+                        <p className="text-white/80 text-sm">{step.description}</p>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
